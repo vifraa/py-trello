@@ -350,7 +350,7 @@ class TrelloClient(object):
         if card_ids:
             query_params['idCards'] = card_ids
         query_params['cards_limit'] = cards_limit
-        query_params['boards_limit'] = cards_limit
+        query_params['boards_limit'] = boards_limit
 
 
         # Request result fields required to instantiate class objects
