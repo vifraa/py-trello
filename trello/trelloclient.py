@@ -310,7 +310,7 @@ class TrelloClient(object):
             raise Exception("Webhook creating failed: %s" % response.text)
 
     def search(self, query, partial_match=False, models=[],
-               board_ids=[], org_ids=[], card_ids=[], cards_limit=10):
+               board_ids=[], org_ids=[], card_ids=[], cards_limit=10, boards_limit=10):
         """
         Search trello given a query string.
 
@@ -350,6 +350,8 @@ class TrelloClient(object):
         if card_ids:
             query_params['idCards'] = card_ids
         query_params['cards_limit'] = cards_limit
+        query_params['boards_limit'] = cards_limit
+
 
         # Request result fields required to instantiate class objects
         query_params['board_fields'] = ['name,url,desc,closed']
